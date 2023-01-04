@@ -2,27 +2,35 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import { CenteredLayout } from '~/components';
 
-// TODO is there a way to not write this twice? =\
-type ButtonType = 'fast' | 'quality' | 'cheap';
+enum ButtonEnum {
+  fast = 'fast',
+  quality = 'quality',
+  cheap = 'cheap'
+}
 
-const buttons: ButtonType[] = ['fast', 'quality', 'cheap'];
+type ButtonType = keyof typeof ButtonEnum
+
+const buttons: ButtonType[] = [ButtonEnum.fast, ButtonEnum.quality, ButtonEnum.cheap];
 
 interface ButtonProps {
   button: ButtonType;
-  selectedButton: ButtonType | null;
+  isSelected: boolean;
   setSelectedButton: (value: ButtonType) => void;
 }
 
-// TODO is it possible to improve this component's interface (props)?
-const Button = ({ button, selectedButton, setSelectedButton }: ButtonProps) => {
-  const style = button === selectedButton;
+const Button = ({ button, isSelected, setSelectedButton }: ButtonProps) => {
+
+  const STYLES = 'h-10 px-5 flex items-center justify-center rounded transition-colors';
+  const NON_SELECTED_COLOR = 'bg-gray-300';
+  const SELECTED_COLOR = 'bg-green-400';
+
   return (
     <button
       key={button}
       onClick={() => setSelectedButton(button)}
       className={clsx(
-        'h-10 px-5 flex items-center justify-center rounded transition-colors',
-        style ? 'bg-green-400' : 'bg-gray-300',
+        STYLES,
+        isSelected ? SELECTED_COLOR : NON_SELECTED_COLOR,
       )}
     >
       {button}
@@ -40,7 +48,7 @@ export const Refactor1 = () => {
           <Button
             key={button}
             button={button}
-            selectedButton={selectedButton}
+            isSelected={button === selectedButton}
             setSelectedButton={setSelectedButton}
           />
         ))}
