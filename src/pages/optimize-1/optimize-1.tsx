@@ -7,10 +7,10 @@ type TodoItem = {
   id: number;
   text: string;
   done: boolean;
-}
+};
 
 interface TodoProps {
-  item: TodoItem,
+  item: TodoItem;
 }
 
 const todosData: TodoItem[] = [
@@ -25,8 +25,8 @@ const Todo = memo(({ item }: TodoProps) => {
   useRenderHighlight(css.render, ref.current);
 
   const handleTodoClick = () => {
-      setTodoItem({ ...todoItem, done: !todoItem.done });
-    };
+    setTodoItem({ ...todoItem, done: !todoItem.done });
+  };
 
   return (
     <li ref={ref} onClick={handleTodoClick} className={css.listItem}>
@@ -36,18 +36,15 @@ const Todo = memo(({ item }: TodoProps) => {
 });
 
 export const Optimize1 = () => {
-  const [todos, setTodos] = useState<TodoItem[]>(todosData);  // left to have ability add more todos
+  const [todos, setTodos] = useState<TodoItem[]>(todosData); // left to have ability add more todos
 
   return (
-    <CenteredLayout className='gap-4'>
-      <div className='text-3xl'>It re-renders all items! =\</div>
+    <CenteredLayout className="gap-4">
+      <div className="text-3xl">It re-renders all items! =\</div>
       <div>We need to fix that</div>
       <ul>
         {todos.map((item) => (
-          <Todo
-            key={item.id}
-            item={item}
-          />
+          <Todo key={item.id} item={item} />
         ))}
       </ul>
     </CenteredLayout>

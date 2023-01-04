@@ -5,10 +5,10 @@ const baseDate = new Date('2022-01-01');
 enum ColorsEnum {
   red = 'red',
   green = 'green',
-  blue = 'blue'
+  blue = 'blue',
 }
 
-export type ColorsType = keyof typeof ColorsEnum
+export type ColorsType = keyof typeof ColorsEnum;
 const colors: ColorsType[] = [ColorsEnum.red, ColorsEnum.green, ColorsEnum.blue];
 
 export const rangeItems: Item[] = range(40, (index) => ({
@@ -38,4 +38,3 @@ export enum ColorClassNameEnum {
   green = 'bg-green-300 text-green-900',
   blue = 'bg-blue-300 text-blue-900',
 }
-

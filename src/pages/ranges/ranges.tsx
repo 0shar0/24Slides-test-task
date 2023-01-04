@@ -11,7 +11,7 @@ const transform = (items: Item[]): Range[] =>
     ({ color, start: date, end: items[index + 1]?.date })); // not clear what should be 'start' and 'end' date
 
 const RangesView = ({ ranges }: { ranges: Range[] }) => (
-  <ul className='space-y-4'>
+  <ul className="space-y-4">
     {ranges.map((item) => (
       <li
         key={item.start + item.end}
@@ -48,10 +48,10 @@ export const Ranges = () => {
         ))}
       </ul>
 
-      <h3 className='text-xl font-bold row-start-2'>Ranges example</h3>
+      <h3 className="text-xl font-bold row-start-2">Ranges example</h3>
       <RangesView ranges={ranges} />
 
-      <h3 className='text-xl font-bold row-start-2'>Ranges implementation</h3>
+      <h3 className="text-xl font-bold row-start-2">Ranges implementation</h3>
       <RangesView ranges={transform(jsonItems)} />
     </div>
   );
