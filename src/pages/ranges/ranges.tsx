@@ -5,7 +5,7 @@ import { dataSample, transform } from '~/utils';
 
 export const Ranges = () => {
   return (
-    <div className="max-w-screen-xl mx-auto py-4 grid grid-cols-3 gap-8">
+    <div className="max-w-screen-xl w-full mx-auto py-4 grid grid-cols-3 gap-8">
       <div className="col-span-3">
         <h2 className="text-2xl mb-4">Convert adjacent items of same type into ranges</h2>
         <p>The data of individual item should look like this: </p>
