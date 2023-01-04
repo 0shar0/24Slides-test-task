@@ -1,4 +1,4 @@
-import {  useState } from 'react';
+import { useState } from 'react';
 import { CenteredLayout } from '~/components';
 import { todosData } from '~/models';
 import { TodoItem } from '~/models/type';

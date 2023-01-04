@@ -1,4 +1,4 @@
-import { ColorsType} from '~/models/type';
+import { ColorsType } from '~/models/type';
 
 export interface Item {
   date: string;

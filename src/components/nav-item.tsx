@@ -5,7 +5,7 @@ export const NavItem = (props: LinkProps) => {
   const matchRoute = useMatchRoute();
   const active = Boolean(matchRoute({ to: props.to }));
   return (
-    <li className='px-4'>
+    <li className="px-4">
       <Link
         {...props}
         className={clsx(

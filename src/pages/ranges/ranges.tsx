@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { ColorClassNameEnum, jsonItems, ranges } from '~/models';
-import { RangesView } from './components/ranges-view';
 import { dataSample, transform } from '~/utils';
+import { RangesView } from './components/ranges-view';
 
 export const Ranges = () => {
   return (

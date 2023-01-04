@@ -21,7 +21,6 @@ export const addDays = (date: Date, amount: number) => {
 
 export const formatDate = (date: Date) => date.toISOString().split('T')[0];
 
-
 export const rangeItems: Item[] = range(40, (index) => ({
   date: formatDate(addDays(baseDate, index)),
   color: chooseRandomly(colors),
@@ -32,7 +31,6 @@ export const dataSample = {
   end: '2022-01-03',
   color: 'red',
 };
-
 
 export const transform = (items: Item[]): Range[] =>
   items.map(({ date, color }: Item, index): Range =>
