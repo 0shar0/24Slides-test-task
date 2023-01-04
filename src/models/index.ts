@@ -1,5 +1,4 @@
 export * from './type';
-export * from './data';
 export * from './interface';
 export * from './enum';
 export * from './constants';
