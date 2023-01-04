@@ -1,11 +1,6 @@
-import { memo, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CenteredLayout } from '~/components';
-
-const ExpensiveComponent = memo(() => {
-  const now = performance.now();
-  while (performance.now() - now < 100) {}
-  return <div>Ohh.. so expensive</div>;
-});
+import { ExpensiveComponent } from './components/expensive-component';
 
 export const Optimize2 = () => {
   const [scrollTop, setScrollTop] = useState(0);

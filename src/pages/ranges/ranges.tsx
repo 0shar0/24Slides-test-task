@@ -1,31 +1,7 @@
 import clsx from 'clsx';
-import untypedItems from './items.json';
-import untypedRanges from './ranges.json';
-import { ColorClassNameEnum, dataSample, Item, Range } from './utils';
-
-const jsonItems = untypedItems as Item[];
-const ranges = untypedRanges as Range[];
-
-const transform = (items: Item[]): Range[] =>
-  items.map(({ date, color }: Item, index): Range =>
-    ({ color, start: date, end: items[index + 1]?.date })); // not clear what should be 'start' and 'end' date
-
-const RangesView = ({ ranges }: { ranges: Range[] }) => (
-  <ul className="space-y-4">
-    {ranges.map((item) => (
-      <li
-        key={item.start + item.end}
-        className={clsx(
-          'h-10 flex items-center justify-between px-5 rounded',
-          ColorClassNameEnum[item.color],
-        )}
-      >
-        <span>{item.start}</span>
-        <span>{item.end}</span>
-      </li>
-    ))}
-  </ul>
-);
+import { ColorClassNameEnum, jsonItems, ranges } from '~/models';
+import { RangesView } from './components/ranges-view';
+import { dataSample, transform } from '~/utils';
 
 export const Ranges = () => {
   return (
