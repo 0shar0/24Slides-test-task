@@ -1,5 +1,5 @@
 import { Route } from '@tanstack/react-location';
-import { Optimize1, Optimize2, Ranges, Refactor1, Refactor2, Welcome } from '~/pages';
+import { Annotation, Optimize1, Optimize2, Ranges, Refactor1, Refactor2, Welcome } from '~/pages';
 
 export const routes: Route[] = [
   {
@@ -25,5 +25,9 @@ export const routes: Route[] = [
   {
     path: 'ranges',
     element: <Ranges />,
+  },
+  {
+    path: 'annotation',
+    element: <Annotation />,
   },
 ];

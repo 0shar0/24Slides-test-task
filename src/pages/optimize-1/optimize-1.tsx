@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { CenteredLayout } from '~/components';
 import { todosData } from '~/models';
 import { TodoItem } from '~/models/type';
-import { Todo } from './components/todo';
+import { Todo } from './components/todo/todo';
 
 export const Optimize1 = () => {
-  const [todos, setTodos] = useState<TodoItem[]>(todosData); // left to have ability add more todos
+  const [todos] = useState<TodoItem[]>(todosData);
 
   return (
     <CenteredLayout className="gap-4">

@@ -1,7 +1,7 @@
 import { memo, useRef, useState } from 'react';
 import { useRenderHighlight } from '~/hooks';
-import { TodoItem } from '~/models/type';
-import css from '~/pages/optimize-1/optimize-1.module.scss';
+import { TodoItem } from '~/models';
+import css from './todos.module.scss';
 
 interface TodoProps {
   item: TodoItem;
