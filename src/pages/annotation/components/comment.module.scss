@@ -1,0 +1,56 @@
+.wrapper {
+  position: absolute;
+  background-color: #FFFFFF;
+  border: solid 1px #EFEFF0;
+  width: 360px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #ffffff transparent;
+    position: absolute;
+    top: -10px;
+    left: 168px;
+  }
+
+  input {
+    width: 280px;
+    padding-left: 10px;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .line {
+    height: 1px;
+    width: 320px;
+    background-color: gray;
+  }
+
+  .control {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
+}
+
+.index{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: red;
+  text-align: center;
+  color: white;
+  padding: 2px;
+  z-index: 2;
+}
